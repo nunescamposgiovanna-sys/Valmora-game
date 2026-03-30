@@ -6,16 +6,45 @@
   <title>Mapa de Valmora</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
-  <div class="container">
-    <h1>Mapa de Valmora</h1>
-    <p>Escolha para onde deseja ir.</p>
+<body class="pagina-mapa">
 
-    <div class="map-buttons">
-      <button onclick="window.location.href='floresta.html'">Floresta Central</button>
-      <button onclick="window.location.href='meteoro.html'">Núcleo do Meteoro</button>
-      <button onclick="window.location.href='vulcao.html'">Vulcão dos Dragões</button>
-    </div>
-  </div>
+  <div class="ceu-estrelado"></div>
+
+  <main class="caixa-mapa">
+    <p class="subtitulo-reino">Reino de Valmora</p>
+    <h1>Mapa Encantado</h1>
+    <p class="descricao-mapa">
+      Escolha um destino e descubra os mistérios espalhados pelo reino.
+    </p>
+
+    <section class="grid-locais">
+      <a href="floresta.html" class="card-local">
+        <span class="icone-local">🌲</span>
+        <h2>Floresta Sussurrante</h2>
+        <p>Uma mata antiga coberta de névoa azul e segredos da lua.</p>
+      </a>
+
+      <a href="meteoro.html" class="card-local">
+        <span class="icone-local">💎</span>
+        <h2>Meteoro Azul</h2>
+        <p>O cristal celeste que ilumina Valmora com energia misteriosa.</p>
+      </a>
+
+      <a href="vulcao.html" class="card-local">
+        <span class="icone-local">🐉</span>
+        <h2>Vulcão dos Dragões</h2>
+        <p>Uma região distante, quente e lendária onde vivem os dragões.</p>
+      </a>
+
+      <a href="castelo.html" class="card-local">
+        <span class="icone-local">🏰</span>
+        <h2>Castelo Lunar</h2>
+        <p>O coração do reino, onde brilho, poder e beleza se encontram.</p>
+      </a>
+    </section>
+
+    <a href="index.html" class="botao-voltar">← Voltar ao início</a>
+  </main>
+
 </body>
 </html>
