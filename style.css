@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.home {
+  background: radial-gradient(circle at center, #0a1f2c, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  color: #00ccff;
+  text-shadow: 0 0 20px #00ccff;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #00ccff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #66e0ff;
+}
