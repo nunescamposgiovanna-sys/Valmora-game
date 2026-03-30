@@ -7,10 +7,17 @@ body {
 
 .home {
   min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(6, 12, 30, 0.45), rgba(6, 12, 30, 0.65)),
+    url("backgrounds/inicio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #0a1f2c, #000);
+  text-align: center;
 }
 
 .container {
