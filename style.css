@@ -332,9 +332,14 @@ button:hover {
 }
 
 /* 🌫️ névoa suave */
-.scene-floresta::before {
-  background: radial-gradient(circle at center, rgba(0,255,200,0.08), transparent 60%);
-  animation: nevoa 10s ease-in-out infinite alternate;
+  .scene-floresta {
+  background: 
+    linear-gradient(rgba(5, 18, 16, 0.6), rgba(2, 8, 12, 0.9)),
+    url("backgrounds/floresta-fundo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @keyframes nevoa {
