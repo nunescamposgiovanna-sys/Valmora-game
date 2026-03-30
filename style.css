@@ -43,3 +43,9 @@ button:hover {
   transform: scale(1.1);
   background: #66e0ff;
 }
+.map-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
