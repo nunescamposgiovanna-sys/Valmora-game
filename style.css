@@ -1,19 +1,21 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   color: white;
+  overflow-x: hidden;
 }
 
 .home {
-  background: radial-gradient(circle at center, #0a1f2c, #000);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(circle at center, #0a1f2c, #000);
 }
 
 .container {
   text-align: center;
+  padding: 24px;
 }
 
 h1 {
@@ -24,7 +26,7 @@ h1 {
 
 p {
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 button {
@@ -40,64 +42,29 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: #66e0ff;
 }
-.map-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
-/* ===== FUNDO MÁGICO BASE ===== */
 
-body {
-  overflow-x: hidden;
-}
-
-.scene {
-  position: relative;
+.mapa-page {
   min-height: 100vh;
+  background:
+    linear-gradient(rgba(3, 10, 20, 0.55), rgba(3, 10, 20, 0.75)),
+    radial-gradient(circle at top, #17304a, #08111a 60%, #000 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px;
-  color: white;
+}
+
+.mapa-overlay {
+  width: min(90vw, 520px);
   text-align: center;
-  overflow: hidden;
-}
-
-.scene::before,
-.scene::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.card {
-  position: relative;
-  z-index: 2;
-  width: min(90vw, 620px);
-  background: rgba(8, 18, 32, 0.5);
-  border: 1px solid rgba(88, 220, 255, 0.22);
-  border-radius: 24px;
+  background: rgba(7, 18, 30, 0.55);
+  border: 1px solid rgba(0, 204, 255, 0.25);
+  border-radius: 22px;
   padding: 28px 22px;
   box-shadow: 0 0 30px rgba(0, 204, 255, 0.12);
-  backdrop-filter: blur(6px);
-}
-
-.card h1 {
-  font-size: clamp(40px, 7vw, 72px);
-  margin: 0 0 12px;
-  color: #32e6ff;
-  text-shadow: 0 0 18px rgba(50, 230, 255, 0.8);
-}
-
-.card p {
-  font-size: 18px;
-  line-height: 1.5;
-  opacity: 0.95;
 }
 
 .map-buttons {
@@ -111,125 +78,7 @@ body {
   width: 100%;
 }
 
-/* ===== BOTÕES ===== */
-
-button {
-  margin-top: 0;
-  padding: 14px 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #34eaff, #10c7ef);
-  color: #062033;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  box-shadow: 0 0 18px rgba(52, 234, 255, 0.35);
-  font-weight: 600;
-}
-
-button:hover {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 0 26px rgba(52, 234, 255, 0.55);
-  filter: brightness(1.06);
-}
-
-/* ===== CÉU ESTRELADO ===== */
-
-.stars::before {
-  background:
-    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.7) 0 1px, transparent 2px),
-    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85) 0 1px, transparent 2px),
-    radial-gradient(circle at 50% 10%, rgba(255,255,255,0.75) 0 1px, transparent 2px),
-    radial-gradient(circle at 65% 25%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 15%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
-    radial-gradient(circle at 90% 35%, rgba(255,255,255,0.65) 0 1px, transparent 2px),
-    radial-gradient(circle at 15% 55%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
-    radial-gradient(circle at 72% 60%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
-    radial-gradient(circle at 85% 75%, rgba(255,255,255,0.75) 0 1px, transparent 2px);
-  opacity: 0.8;
-}
-
-/* ===== BRILHOS FLUTUANDO ===== */
-
-.orbs::after {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(34, 225, 255, 0.22), transparent 11%),
-    radial-gradient(circle at 80% 20%, rgba(111, 232, 255, 0.18), transparent 13%),
-    radial-gradient(circle at 75% 75%, rgba(0, 195, 255, 0.18), transparent 14%),
-    radial-gradient(circle at 18% 78%, rgba(69, 219, 255, 0.16), transparent 12%),
-    radial-gradient(circle at 50% 45%, rgba(95, 236, 255, 0.1), transparent 18%);
-  animation: drift 10s ease-in-out infinite alternate;
-}
-
-@keyframes drift {
-  from {
-    transform: translateY(0px) scale(1);
-  }
-  to {
-    transform: translateY(-10px) scale(1.03);
-  }
-}
-
-/* ===== CENÁRIOS ===== */
-
-.scene-mapa {
-  background:
-    linear-gradient(rgba(2, 10, 20, 0.62), rgba(2, 10, 20, 0.82)),
-    radial-gradient(circle at top, #173757 0%, #0a1830 45%, #03070f 100%);
-}
-
-.scene-floresta {
-  background:
-    linear-gradient(rgba(5, 16, 14, 0.55), rgba(3, 10, 12, 0.78)),
-    radial-gradient(circle at top, #174d4a 0%, #0f2630 45%, #04080d 100%);
-}
-
-.scene-floresta::after {
-  background:
-    radial-gradient(circle at 15% 100%, rgba(34, 255, 191, 0.18), transparent 18%),
-    radial-gradient(circle at 35% 100%, rgba(32, 201, 151, 0.14), transparent 16%),
-    radial-gradient(circle at 60% 100%, rgba(56, 255, 220, 0.12), transparent 20%),
-    radial-gradient(circle at 85% 100%, rgba(26, 216, 173, 0.14), transparent 18%);
-}
-
-.scene-meteoro {
-  background:
-    linear-gradient(rgba(8, 12, 24, 0.5), rgba(3, 8, 18, 0.82)),
-    radial-gradient(circle at center, #1f5d72 0%, #10263f 35%, #030711 100%);
-}
-
-.scene-meteoro::after {
-  background:
-    radial-gradient(circle at 50% 45%, rgba(66, 239, 255, 0.4), transparent 10%),
-    radial-gradient(circle at 50% 45%, rgba(66, 239, 255, 0.18), transparent 22%),
-    radial-gradient(circle at 50% 45%, rgba(66, 239, 255, 0.08), transparent 34%);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.04);
-    opacity: 0.88;
-  }
-}
-
-.scene-vulcao {
-  background:
-    linear-gradient(rgba(20, 8, 8, 0.55), rgba(10, 5, 8, 0.85)),
-    radial-gradient(circle at top, #4c1f1c 0%, #251320 40%, #07080d 100%);
-}
-
-.scene-vulcao::after {
-  background:
-    radial-gradient(circle at 50% 100%, rgba(255, 94, 0, 0.22), transparent 20%),
-    radial-gradient(circle at 35% 100%, rgba(255, 153, 0, 0.12), transparent 16%),
-    radial-gradient(circle at 65% 100%, rgba(255, 76, 0, 0.14), transparent 18%);
-}
+/* floresta mágica */
 .scene {
   min-height: 100vh;
   display: flex;
@@ -258,57 +107,38 @@ button:hover {
   padding: 28px 22px;
   box-shadow: 0 0 30px rgba(0, 234, 255, 0.12);
   backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.card h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  margin: 0 0 12px;
+  color: #53f0ff;
+  text-shadow: 0 0 18px rgba(83, 240, 255, 0.8);
+}
+
+.card p {
+  line-height: 1.5;
+  opacity: 0.95;
 }
 
 .scene-floresta {
   background:
-    linear-gradient(rgba(5, 18, 16, 0.55), rgba(2, 8, 12, 0.82)),
-    radial-gradient(circle at top, #17463e 0%, #0a1d24 45%, #02060b 100%);
+    linear-gradient(rgba(5, 18, 16, 0.6), rgba(2, 8, 12, 0.9)),
+    url("backgrounds/floresta-fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .scene-floresta::before {
-  background:
-    radial-gradient(circle at 15% 100%, rgba(39, 255, 191, 0.18), transparent 18%),
-    radial-gradient(circle at 35% 100%, rgba(30, 204, 166, 0.14), transparent 16%),
-    radial-gradient(circle at 60% 100%, rgba(61, 255, 222, 0.12), transparent 20%),
-    radial-gradient(circle at 85% 100%, rgba(26, 216, 173, 0.14), transparent 18%);
+  background: url("backgrounds/floresta-frente.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.45;
 }
 
-.scene-floresta::after {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(80, 255, 220, 0.18), transparent 10%),
-    radial-gradient(circle at 78% 22%, rgba(66, 239, 255, 0.14), transparent 12%),
-    radial-gradient(circle at 72% 72%, rgba(111, 232, 255, 0.12), transparent 14%),
-    radial-gradient(circle at 18% 76%, rgba(69, 219, 255, 0.10), transparent 12%);
-  animation: brisaMagica 8s ease-in-out infinite alternate;
-}
-
-@keyframes brisaMagica {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
-
-.stars::before {
-  background:
-    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
-    radial-gradient(circle at 22% 70%, rgba(255,255,255,0.7) 0 1px, transparent 2px),
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.8) 0 1px, transparent 2px),
-    radial-gradient(circle at 50% 12%, rgba(255,255,255,0.65) 0 1px, transparent 2px),
-    radial-gradient(circle at 68% 24%, rgba(255,255,255,0.85) 0 1px, transparent 2px),
-    radial-gradient(circle at 82% 18%, rgba(255,255,255,0.7) 0 1px, transparent 2px),
-    radial-gradient(circle at 90% 38%, rgba(255,255,255,0.65) 0 1px, transparent 2px);
-  opacity: 0.7;
-}
-
-.scene .card h1 {
-  color: #53f0ff;
-  text-shadow: 0 0 18px rgba(83, 240, 255, 0.8);
-}
-/* ✨ partículas mágicas flutuando */
 .scene-floresta::after {
   background:
     radial-gradient(circle at 20% 30%, rgba(120,255,255,0.8) 0 2px, transparent 3px),
@@ -316,7 +146,6 @@ button:hover {
     radial-gradient(circle at 70% 40%, rgba(150,255,255,0.6) 0 2px, transparent 3px),
     radial-gradient(circle at 85% 70%, rgba(90,255,255,0.7) 0 2px, transparent 3px),
     radial-gradient(circle at 10% 80%, rgba(120,255,255,0.5) 0 2px, transparent 3px);
-    
   animation: magiaFloresta 6s ease-in-out infinite alternate;
 }
 
@@ -330,39 +159,3 @@ button:hover {
     opacity: 1;
   }
 }
-
-/* 🌫️ névoa suave */
-  .scene-floresta {
-  background: 
-    linear-gradient(rgba(5, 18, 16, 0.6), rgba(2, 8, 12, 0.9)),
-    url("backgrounds/floresta-fundo.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@keyframes nevoa {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 0.7;
-  }
-}
-
-/* 💙 brilho no texto */
-.scene-floresta h1 {
-  animation: brilhoTitulo 2s infinite alternate;
-}
-
-@keyframes brilhoTitulo {
-  from {
-    text-shadow: 0 0 10px #00eaff;
-  }
-  to {
-    text-shadow: 0 0 25px #00eaff, 0 0 40px #0077ff;
-  }
-}
-
-
